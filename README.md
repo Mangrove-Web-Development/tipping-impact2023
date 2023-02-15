@@ -1,4 +1,4 @@
-# tipping-point
+# Tipping Point Impact 2023
 - Enter docker container
     - `docker compose run --service-ports node`
 - Install dependencies
