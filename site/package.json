@@ -1,0 +1,18 @@
+{
+  "name": "tipping-point",
+  "version": "1.0.0",
+  "repository": "https://github.com/Mangrove-Web-Development/tipping-point.git",
+  "author": "Mangrove Web Development",
+  "license": "none",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.8.3",
+    "parcel": "^2.8.3"
+  },
+  "scripts": {
+    "start": "parcel -p 80 index.html",
+    "build": "parcel build index.html",
+    "serve": "parcel serve -p 80 index.html"
+  }
+}

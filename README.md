@@ -1,1 +1,11 @@
 # tipping-point
+- Enter docker container
+    - `docker compose run --service-ports node`
+- Install dependencies
+    - `yarn install`
+- Run local dev
+    - `yarn start`
+- Build production dist
+    - `yarn build`
+- Serve dist directory on localhost
+    - `yarn serve`
