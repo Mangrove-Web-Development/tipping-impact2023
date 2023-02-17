@@ -1,0 +1,96 @@
+* {
+
+  &,
+  &:after,
+  &:before {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: $base-font-size;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: $base-font;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  letter-spacing: $base-letter-spacing;
+  color: $text-color;
+  background-color: $bg-color;
+  text-rendering: optimizeSpeed;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 90vh;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+  font-size: $text-base-bump;
+  @include media-below("lg") {
+    font-size: $text-base-bump-mob;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.body--sm {
+    font-size: $base-font-size;
+    line-height: 1.67;
+    @include media-below("lg") {
+      font-size: $text-base-mob;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+  transition: $base-transition;
+
+  &:hover,
+  &:focus {
+    color: darken($link-color, 15%);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $brand-primary;
+  }
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid $hr-color;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder,
+::placeholder {
+  color: $brand-gray;
+}

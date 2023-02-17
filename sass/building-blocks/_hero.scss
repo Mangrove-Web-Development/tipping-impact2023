@@ -1,0 +1,163 @@
+.hero {
+  min-height: 560px;
+  position: relative;
+  display: flex;
+  @include media-above("lg") {
+    align-items: center;
+  }
+  @include media-below("lg") {
+    min-height: 0;
+  }
+  &--white {
+    color: $brand-white;
+  }
+  &--black {
+    color: $brand-black;
+  }
+  @include media-below("lg") {
+    padding: $space-lg 0 0;
+  }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  display: contents;
+  @include media-below("lg") {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  z-index: -2;
+
+  &--light-green {
+    background-color: $brand-light-green;
+  }
+
+  &--green {
+    background-color: $brand-green;
+  }
+
+  &--orange {
+    background-color: $brand-orange;
+  }
+
+  &--blue {
+    background-color: $brand-blue;
+  }
+
+  &--image {
+    background-size: cover;
+    background-position: 50%;
+  }
+
+  // overwrite default lazyload class in vendor/lazyload
+  &.lazyload,
+  &.lazyloading {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero__overlay {
+  background: linear-gradient(270.01deg, rgba(55, 53, 51, 0.8) -9.01%, rgba(55, 53, 51, 0) 71.04%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  z-index: -1;
+}
+
+.hero__wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.hero__side {
+  width: 50%;
+  @include media-below("lg") {
+    width: 100%;
+  }
+}
+
+.hero__graphic {
+  position: absolute;
+  width: 50%;
+  bottom: 0;
+  left: -50px;
+  top: auto;
+  @include media-below("lg") {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80%;
+  }
+  @include media-below("sm") {
+    width: 85%;
+  }
+  img {
+    width: 90%;
+    display: block;
+    @include media-below("xxl") {
+      width: 100%;
+    }
+    @include media-below("lg") {
+      margin: auto;
+    }
+  }
+}
+
+.hero__text {
+  margin: 0 0 0 auto;
+
+  h1 {
+    @include media-below("xl") {
+      font-size: $text-lg;
+    }
+    @include media-below("sm") {
+      font-weight: 500;
+      font-size: $text-lg-mob;
+      line-height: 125%;
+    }
+  }
+}
+
+.hero__title {
+  position: relative;
+  display: table-cell;
+
+  &:after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    margin: 0 0 -50px -30px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    background-color: $brand-orange;
+
+    @include media-above("xl") {
+      width: 120px;
+      height: 120px;
+      margin: 0 0 -50px -80px;
+    }
+
+    @include media-above("sm") {
+      width: 90px;
+      height: 90px;
+      margin: 0 0 -50px -60px;
+    }
+  }
+}

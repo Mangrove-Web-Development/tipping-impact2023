@@ -1,0 +1,8 @@
+/**
+ * Core: Fonts
+ * -----------------------------------------------------------------------------
+ */
+
+@include font-face("Avenir", "../fonts/AvenirLT-Book", 400, normal, ttf);
+@include font-face("BarlowCondensed", "../fonts/BarlowCondensed-Medium", 500, normal, ttf);
+@include font-face("BarlowCondensed", "../fonts/BarlowCondensed-SemiBold", 600, normal, ttf);

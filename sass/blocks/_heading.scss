@@ -1,0 +1,63 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $base-font-heading;
+  font-size: $base-font-size;
+  font-weight: $base-font-heading-weight;
+  margin: 0;
+  padding: 0;
+  letter-spacing: normal;
+}
+
+.heading--xs { //24px Subhead
+  font-size: $text-base-bump;
+  letter-spacing: $base-letter-spacing;
+  line-height: 1.5;
+  @include media-below("lg") {
+    font-size: $text-base-bump2-mob;
+  }
+}
+
+.heading--sm { //36px H4
+  font-size: $text-sm;
+  line-height: 1.22;
+  @include media-below("lg") {
+    font-size: $text-lg-mob;
+  }
+}
+
+.heading--md { //42px H3
+  font-size: $text-md;
+  line-height: 1.29;
+  @include media-below("lg") {
+    font-size: $text-lg-mob;
+  }
+}
+
+.heading--lg { //54px H2
+  font-size: $text-lg;
+  line-height: 1.29;
+  @include media-below("lg") {
+    font-size: $text-lg-mob;
+  }
+}
+
+.heading--xl { //72px H1
+  font-size: $text-xl;
+  line-height: 1.17;
+  @include media-below("lg") {
+    font-size: $text-lg-mob;
+  }
+}
+
+.heading--eyebrow { //18px Callout
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-size: $text-base;
+  @include media-below("lg") {
+    font-size: $text-base-mob;
+  }
+}

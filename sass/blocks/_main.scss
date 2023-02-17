@@ -1,0 +1,9 @@
+.main {
+  padding-top: $header-height-mobile;
+
+  @include media-above("lg") {
+    padding-top: $header-height-desktop;
+  }
+}
+
+

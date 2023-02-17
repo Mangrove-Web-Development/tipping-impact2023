@@ -1,0 +1,140 @@
+// Breakpoints
+$breakpoints: (
+  "horizontal": (
+    "xs": 375px,
+    "sm": 500px,
+    "md": 700px,
+    "lg": 965px,
+    "xl": 1200px,
+    "xxl": 1360px,
+    "xxxl": 1500px
+  ),
+  "vertical": (
+    "xs": 300px,
+    "sm": 450px,
+    "md": 600px,
+    "lg": 750px,
+    "xl": 900px,
+    "xxl": 1100px
+  )
+);
+
+// Base
+$base-font                : "Avenir", Helvetica, Arial, sans-serif;
+$second-font              : "BarlowCondensed", Helvetica, Arial, sans-serif;
+$base-font-heading        : $second-font;
+$base-font-size           : 18px;
+$base-font-weight         : 400;
+$base-font-heading-weight : 500;
+$base-line-height         : 1.5;
+$base-letter-spacing      : 0.1px;
+$letter-spacing-lg        : 1.3px;
+// Brand Primary
+$brand-white              : #FFFBF5;
+$brand-black              : #373533;
+$brand-orange             : #FA7E65;
+$brand-green              : #00AB69;
+$brand-blue               : #6C99F4;
+
+$brand-gray               : $brand-black;
+
+// Brand Secondary
+$brand-green-tint         : #B6FFCA;
+$brand-red-tint           : #FFD3B6;
+$brand-blue-tint          : #84C3F7;
+$brand-dark-green         : #148559;
+$brand-mid-green          : #2FCF91;
+$brand-light-green        : #87F5A6;
+
+// Color list to use in utility classes
+$colors: (
+  "white": $brand-white,
+  "black": $brand-black,
+  "orange": $brand-orange,
+  "green": $brand-green,
+  "blue": $brand-blue,
+  "green-tint": $brand-green-tint,
+  "red-tint": $brand-red-tint,
+  "blue-tint": $brand-blue-tint,
+  "dark-green": $brand-dark-green,
+  "mid-green": $brand-mid-green,
+  "light-green": $brand-light-green
+);
+
+$brand-primary            : $brand-green;
+$brand-secondary          : $brand-orange;
+
+// Typography
+$text-color               : $brand-black;
+$heading-color            : $text-color;
+$text-placeholder-color   : #b0b0b0;
+$text-gray                : #75787b;
+$link-color               : $brand-primary;
+
+// Typography sizing
+$text-xs                  : 0.667rem; //12px
+$text-xs-bump             : 0.778rem; //14px
+$text-base                : 1rem;     //18px
+$text-base-bump           : 1.333rem; //24px
+$text-base-bump2          : 1.667rem; //30px
+$text-sm                  : 2rem;     //36px
+$text-sm-bump             : 2.222rem; //40px
+$text-md                  : 2.333rem; //42px
+$text-lg                  : 3rem;     //54px
+$text-xl                  : 4rem;     //72px
+$text-xxl                 : 5.111rem; //92px
+$text-xxxl                : 7.222rem; //130px
+
+// Typography sizing Mobile
+$text-sm-mob              : 0.667rem;  //12px
+$text-base-mob            : 0.778rem;  //14px
+$text-base-bump-mob       : 0.889rem;  //16px
+$text-base-bump2-mob      : 1.111rem;  //20px
+$text-lg-mob              : 1.333rem;  //24px
+$text-xxl-mob             : 2.778rem;  //50px
+
+// Spacing
+$space-xxs                : 5px;
+$space-xs                 : 10px;
+$space-sm                 : 20px;
+$space                    : 30px;
+$space-md                 : 40px;
+$space-md-bump            : 50px;
+$space-lg                 : 60px;
+$space-lg-bump            : 80px;
+$space-xl                 : 100px;
+$space-xxl                : 150px;
+
+// Bg Colors
+$bg-color                 : $brand-white;
+$bg-footer                : $brand-black;
+
+// Borders
+$border-color             : $brand-black;
+$hr-color                 : $border-color;
+
+// Transitions
+$base-transition          : all .3s ease-in-out;
+$base-transition-duration : .3s;
+$base-transition-function : ease-in-out;
+
+// Grid
+$grid-padding             : 8px;
+
+// Wrapper
+$wrapper-padding          : 16px;
+
+// Header
+$header-height-desktop    : 95px;
+$header-height-mobile     : 89px;
+
+// Border radius
+$border-radius            : 20px;
+$border-radius-lg         : 60px;
+
+// Shadows
+$shadow                   : 0px 15px 50px rgba(63, 65, 82, 0.1);
+
+// Form elements
+$btn-padding              : 12px 24px;
+$btn-padding-mob          : 8px 24px;

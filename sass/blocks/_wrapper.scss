@@ -1,0 +1,61 @@
+/**
+ * @object wrapper
+ * @description Wrapper
+ * -----------------------------------------------------------------------------
+ */
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $wrapper-padding;
+  padding-right: $wrapper-padding;
+
+  @include clearfix;
+
+  @include media-above("xs") {
+    max-width: get-breakpoint("horizontal", "xs");
+  }
+
+  @include media-above("sm") {
+    max-width: get-breakpoint("horizontal", "sm");
+  }
+
+  @include media-above("md") {
+    max-width: get-breakpoint("horizontal", "md");
+  }
+
+  @include media-above("lg") {
+    max-width: get-breakpoint("horizontal", "lg");
+  }
+
+  @include media-above("xl") {
+    max-width: get-breakpoint("horizontal", "xl");
+  }
+
+  @include media-above("xxl") {
+    max-width: get-breakpoint("horizontal", "xxl");
+  }
+}
+
+.wrapper--fill{
+  max-width: 1440px;
+  padding: 0;
+}
+
+.wrapper--full {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+}
+
+.wrapper--lg {
+  max-width: get-breakpoint("horizontal", "xxxl");
+}
+
+.wrapper--default {
+  max-width: get-breakpoint("horizontal", "xl");
+}
+
+.wrapper--md {
+  max-width: get-breakpoint("horizontal", "lg");
+}

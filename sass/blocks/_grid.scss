@@ -1,0 +1,87 @@
+@use 'mixins' as *;
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 0 (-$grid-padding);
+}
+
+.grid__column {
+  width: 100%;
+  position: relative;
+  padding: $grid-padding;
+}
+
+.grid__item {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: $text-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.grid--lg {
+  @include media-above('md') {
+    margin: 0 (-$grid-padding * 4);
+
+    .grid__column {
+      padding: $grid-padding * 4;
+    }
+  }
+}
+
+// @include make-grid('', 12);
+// @include make-grid('', 2);
+// @include make-grid('', 3);
+// @include make-grid('', 4);
+// @include make-grid('', 5);
+// @include make-grid('', 6);
+
+@include media-above("xs") {
+  @include make-grid("--xs", 12);
+  @include make-grid("--xs", 2);
+  @include make-grid("--xs", 3);
+  @include make-grid("--xs", 4);
+  @include make-grid("--xs", 5);
+  @include make-grid("--xs", 6);
+}
+
+@include media-above("sm") {
+  @include make-grid("--sm", 12);
+  @include make-grid("--sm", 2);
+  @include make-grid("--sm", 3);
+  @include make-grid("--sm", 4);
+  @include make-grid("--sm", 5);
+  @include make-grid("--sm", 6);
+}
+
+@include media-above("md") {
+  @include make-grid("--md", 12);
+  @include make-grid("--md", 2);
+  @include make-grid("--md", 3);
+  @include make-grid("--md", 4);
+  @include make-grid("--md", 5);
+  @include make-grid("--md", 6);
+}
+
+@include media-above("lg") {
+  @include make-grid("--lg", 12);
+  @include make-grid("--lg", 2);
+  @include make-grid("--lg", 3);
+  @include make-grid("--lg", 4);
+  @include make-grid("--lg", 5);
+  @include make-grid("--lg", 6);
+}
+
+@include media-above("xl") {
+  @include make-grid("--xl", 12);
+  @include make-grid("--xl", 2);
+  @include make-grid("--xl", 3);
+  @include make-grid("--xl", 4);
+  @include make-grid("--xl", 5);
+  @include make-grid("--xl", 6);
+}

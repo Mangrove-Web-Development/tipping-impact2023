@@ -1,0 +1,301 @@
+.nav--main {
+
+  display: none;
+
+  @include media-above("lg") {
+    display: block;
+  }
+
+  .nav__list {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .menu_item {
+      margin-right: $space;
+      @include media-above("lg") {
+        margin-right: $space-md;
+      }
+      @include media-above("xl") {
+        margin-right: $space-md*2;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+
+      a {
+        color: $brand-white;
+        transition: $base-transition;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-lg;
+        font-family: $second-font;
+        font-weight: 700;
+        line-height: 1;
+        padding-bottom: 40px;
+
+        &:hover,
+        &:focus {
+          color: $brand-light-green;
+        }
+      }
+
+      &.current-menu-item {
+        a {
+          color: $brand-light-green;
+        }
+      }
+
+      &.menu-item-has-children {
+        position: relative;
+
+        &:hover {
+
+          .sub-menu {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+          }
+        }
+      }
+
+      .sub-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: calc(100% + 35px);
+        left: -$space-sm;
+        min-width: 252px;
+        padding: $space-sm;
+        border-radius: 10px;
+        box-shadow: $shadow;
+        background-color: $brand-white;
+        transition: $base-transition;
+        pointer-events: none;
+        border: 1px solid $brand-black; 
+        &.toggled-on {
+          opacity: 1;
+          pointer-events: auto;
+          visibility: visible;
+        }
+        li {
+          margin-bottom: $space-sm;
+          margin-right: 0;
+          position: relative;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &::before {
+            content: '';
+            width: calc(100% + 40px);
+            height: 235%;
+            display: block;
+            position: absolute;
+            z-index: 1;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          &:hover,
+          &:focus,
+          &:active {
+            &::before {
+              background-color: $brand-light-green;
+            }
+          }
+
+          a {
+            display: block;
+            white-space: nowrap;
+            color: $brand-black;
+            font-weight: 600;
+            z-index: 2;
+            position: relative;
+            padding-bottom: 0;
+          }
+        }
+
+        &.has-sub-menu .sub-menu {
+          display: none;
+        }
+      }
+    }
+  }
+
+}
+
+
+.nav--mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $brand-gray;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  padding: $space;
+  padding-top: $space-xxl;
+  pointer-events: none;
+  transform: translateX(100%);
+  transition: $base-transition;
+
+  &.is-active {
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  @include media-above("sm") {
+    padding: $space-lg;
+    padding-top: $space-xxl;
+  }
+
+  @include media-above("lg") {
+    display: none;
+  }
+
+  .nav__list {
+
+    .menu_item {
+      padding-bottom: $space;
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      a {
+        color: $brand-white;
+        transition: $base-transition;
+        font-weight: 500;
+        font-size: $text-lg-mob;
+        text-transform: uppercase;
+        font-family: $second-font;
+
+        &:hover,
+        &:focus {
+          color: $brand-light-green;
+        }
+      }
+
+      &.current-menu-item {
+        a {
+          color: $brand-light-green;
+        }
+      }
+
+      &.menu-item-has-children {
+        position: relative;
+
+        a + button {
+          height: 12px;
+          margin-left: $space-xs;
+          margin-top: 13px;
+          width: 31px;
+          padding: 0;
+          border: 0;
+          background-color: transparent;
+          float: right;
+          &:focus,
+          &:hover,
+          &:active {
+            background-color: transparent;
+            color: $brand-white;
+          }
+
+          &.is-active {
+            transform: rotate(90deg);
+            color: $brand-light-green;
+          }
+        }
+
+        .sub-menu {
+          display: none;
+          padding-top: $space-xs;
+          & > li {
+            padding-bottom: $space-sm;
+            position: relative;
+            &:last-child {
+              padding-bottom: $space-sm;
+            }
+
+            a {
+              font-size: $text-base-bump2-mob;
+              letter-spacing: $base-letter-spacing;
+              color: $brand-white; 
+              &:active,
+              &:focus {
+                outline: 0;
+                color: $brand-black;
+              }
+              &::before {
+                content: '';
+                width: calc(100% + 120px);
+                height: 44px;
+                display: block;
+                position: absolute;
+                z-index: -1;
+                left: -60px;
+                top: -6px;
+              }
+              &:focus,
+              &:active {
+                &::before {
+                  background-color: $brand-light-green;
+                }   
+              }   
+            }
+
+            &.current-menu-item {
+              a {
+                
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav--social {
+
+  .nav__list {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      margin-right: $space-xxs;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      a {
+        background-color: $brand-green;
+        border-radius: 50%;
+        display: flex;
+        width: 38px;
+        height: 38px;
+        align-items: center;
+        justify-content: center;
+        svg {
+          height: 19px;
+
+          path {
+            transition: $base-transition;
+            fill: $brand-light-green;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          svg path {
+            fill: $brand-mid-green;
+          }
+        }
+      }
+    }
+
+
+  }
+
+}

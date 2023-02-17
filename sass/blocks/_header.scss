@@ -1,0 +1,37 @@
+.header {
+  background-color: $brand-black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: $base-transition;
+
+  .admin-bar & {
+    top: 32px;
+  }
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height-mobile;
+  position: relative;
+
+  @include media-above("lg") {
+    height: $header-height-desktop;
+  }
+}
+
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+
+.headroom--not-top {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
+}
+
+.js-header-wrapper {
+  position: relative;
+}

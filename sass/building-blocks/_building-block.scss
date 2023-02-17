@@ -1,0 +1,46 @@
+.building-block {
+  padding-top: var(--top-padding-mobile, $space);
+  padding-bottom: var(--bottom-padding-mobile, $space);
+  position: relative;
+
+  @include media-above("sm") {
+    padding-top: var(--top-padding, $space);
+    padding-bottom: var(--bottom-padding, $space);
+  }
+}
+
+.building-block__header {
+  margin-bottom: $space-md;
+  .u-text-center {
+    max-width: 935px;
+    margin: 0 auto;
+  }
+}
+
+// Background
+.building-block__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  &--image {
+    background-size: cover;
+    background-position: 50%;
+  }
+}
+
+// Edit Link
+.building-block__edit-link {
+  position: absolute;
+  right: $space-xs;
+  top: $space-xs;
+  opacity: .5;
+  z-index: 2;
+
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,129 @@
+.footer {
+  background-color: $bg-footer;
+  padding: $space-xl*2 0 $space-lg;
+  font-family: $second-font;
+  &__desktop {
+    @include media-below("lg") {
+      display: none;
+    }
+  }
+  &__mobile {
+    @include media-above("lg") {
+      display: none;
+    }
+  }
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__contact {
+  font-size: $text-base;
+  line-height: 100%;
+  letter-spacing: 1.3px;
+  @include media-below("md") {
+    font-size: $text-base-mob;
+  }
+  a {
+    color: inherit;
+  }
+}
+
+.footer__right {
+  &--mobile {
+    margin: 0 0 $space;
+  }
+
+  ul:not(.sub-menu) {
+    a {
+      font-weight: 600;
+      font-size: $text-base;
+      line-height: 100%;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+  }
+  ul {
+    display: flex;
+    margin: 0 -1 * $space-xs;
+    @include media-below("md") {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    li {
+      flex: 1;
+      line-height: 1;
+      padding: 0 $space-xs;
+      @include media-below("md") {
+        width: 48%;
+        flex: none;
+        margin: $space-xxs 0;
+      }
+      @include media-below("sm") {
+        width: 100%;
+      }
+    }
+    ul.sub-menu {
+      flex-direction: column;
+      margin: $space-xs 0 0;
+      @include media-below("md") {
+        display: none;
+      }
+      li {
+        line-height: 157%;
+        padding: 0;
+        a {
+          color: $brand-light-green;
+          font-weight: 500;
+          font-size: $text-xs-bump;
+          line-height: 147%;
+          letter-spacing: 0.2px;
+          text-transform: none;
+          &:hover {
+            color: $brand-green;
+          }
+        }
+      }
+    }
+
+    .dropdown-toggle {
+      display: none;
+    }
+  }
+}
+
+.footer__content-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: $space-lg 0 0;
+}
+
+.footer__mobile {
+  .logo {
+    text-align: center;
+    margin: 0 0 $space-sm;
+    img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__bottom {
+    display: flex;
+    @include media-below("sm") {
+      flex-direction: column;
+    }
+  }
+  &__box {
+    flex: 1;
+    @include media-below("sm") {
+      margin: $space-xxs 0;
+    }
+  }
+}
