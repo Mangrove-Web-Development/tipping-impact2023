@@ -2,20 +2,11 @@
   min-height: 560px;
   position: relative;
   display: flex;
+  padding: $space-lg 0 0;
   @include media-above("lg") {
     align-items: center;
-  }
-  @include media-below("lg") {
-    min-height: 0;
-  }
-  &--white {
-    color: $brand-white;
-  }
-  &--black {
-    color: $brand-black;
-  }
-  @include media-below("lg") {
-    padding: $space-lg 0 0;
+    min-height: 560px;
+    padding: 0;
   }
 }
 
@@ -39,25 +30,9 @@
   z-index: 100;
   z-index: -2;
 
-  &--light-green {
-    background-color: $brand-light-green;
-  }
-
-  &--green {
-    background-color: $brand-green;
-  }
-
-  &--orange {
-    background-color: $brand-orange;
-  }
-
-  &--blue {
-    background-color: $brand-blue;
-  }
-
   &--image {
     background-size: cover;
-    background-position: 50%;
+    background-position: 35% 50%;
   }
 
   // overwrite default lazyload class in vendor/lazyload
@@ -91,36 +66,8 @@
   }
 }
 
-.hero__graphic {
-  position: absolute;
-  width: 50%;
-  bottom: 0;
-  left: -50px;
-  top: auto;
-  @include media-below("lg") {
-    position: relative;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 80%;
-  }
-  @include media-below("sm") {
-    width: 85%;
-  }
-  img {
-    width: 90%;
-    display: block;
-    @include media-below("xxl") {
-      width: 100%;
-    }
-    @include media-below("lg") {
-      margin: auto;
-    }
-  }
-}
-
 .hero__text {
-  margin: 0 0 0 auto;
+  margin: 0 0 $space-lg auto;
 
   h1 {
     @include media-below("xl") {

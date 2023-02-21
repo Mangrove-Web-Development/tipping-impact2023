@@ -10,10 +10,13 @@
 }
 
 .building-block__header {
-  margin-bottom: $space-md;
+  margin-bottom: $space-sm;
   .u-text-center {
     max-width: 935px;
     margin: 0 auto;
+  }
+  @include media-above("lg") {
+    margin-bottom: $space-md;
   }
 }
 
@@ -29,6 +32,9 @@
   &--image {
     background-size: cover;
     background-position: 50%;
+  }
+  &--charcoal {
+    background-color: $brand-black;
   }
 }
 

@@ -1,0 +1,104 @@
+.building-block--stats{
+  background-color: $brand-white;
+}
+
+.stats {
+  background-color: $brand-white;
+  border: 1px solid $brand-black;
+  border-radius: $border-radius;
+  padding: $space;
+  margin-top: -300px;
+  @include media-above("lg") {
+    margin-top: -150px;
+  }
+}
+
+.stats__grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    @include media-below("md") {
+        max-width: 70%;
+        margin: auto;
+    }
+    @include media-below("sm") {
+        max-width: 300px;
+        margin: auto;
+    }
+}
+
+.stats__item {
+    transition: $base-transition;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border: 1px solid transparent;
+
+    div{
+        font-size: $text-base;
+        font-weight: 400;
+        line-height: 165%;
+        text-align: center;
+        letter-spacing: 0.1px;  
+        @include media-below("xl") {
+            font-size: $text-base;
+            line-height: 130%;
+        }
+        @include media-below("md") {
+            font-size: $text-base-bump-mob;
+            line-height: 160%;
+        }
+    }
+
+    // h2{
+    //     @include media-below("md") {
+    //         padding: 0 $space-md;
+    //     }
+    // }
+
+    h2,
+    div {
+        transition: $base-transition;
+    }
+
+    &--3 {
+        width: 33.33%;
+        padding: $space-sm $space;
+
+        @include media-below("xl") {
+            width: calc(50% - 20px);
+            margin: $space-xs $space-xs;
+        }
+        @include media-below("md") {
+            width: 100%;
+            margin: 0;
+            padding: $space-sm;
+        }
+    }
+}
+
+.stats__title {
+    font-weight: 600;
+    font-size: $text-xxl;
+    line-height: 1;
+    span {
+      display: block;
+      font-size: $text-sm;
+    }
+    @include media-below("xl") {
+      font-size: $text-xl;
+    }
+    @include media-below("lg") {
+      font-size: $text-lg;
+    }
+    @include media-below("md") {
+      font-size: $text-xxl-mob;
+    }
+}
+
+.stats__text {
+    margin: $space-xs 0 0;
+}

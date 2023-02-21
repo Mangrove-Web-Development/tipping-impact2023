@@ -1,5 +1,5 @@
 .main {
-  padding-top: $header-height-mobile;
+  padding-top: 0;
 
   @include media-above("lg") {
     padding-top: $header-height-desktop;

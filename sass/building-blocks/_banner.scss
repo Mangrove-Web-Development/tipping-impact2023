@@ -1,0 +1,85 @@
+.banner {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--donate {
+    .banner__inner {
+      padding: $space-sm 0;
+      background-color: $brand-light-green;
+      @include media-below("lg") {
+        flex-direction: column;
+      }
+    }
+
+    h2 {
+      color: $brand-green;
+      margin: 0 $space 0 0;
+      text-align: center;
+      @include media-below("lg") {
+        margin: 0 0 $space-xs;
+      }
+    }
+  }
+
+  &--cta-banner {
+    text-align: center;
+    .banner__inner {
+      background-color: $brand-black;
+      flex-direction: column;
+      width: 1440px;
+      max-width: 90%;
+      margin: auto;
+      border-radius: 20px;
+      min-height: 240px;
+      padding: $space $space-md;
+      @include media-below("md") {
+        padding: $space;
+        min-height: 150px;
+      }
+    }
+    h2,
+    p {
+      color: $brand-white;
+    }
+
+    p {
+      margin: 0 0 $space;
+      @include media-below("md") {
+        margin: 3 * $space-xxs 0;
+      }
+    }
+  }
+
+  &--cta-banner {
+    position: relative;
+    padding: $space-xl 0;
+    @include media-below("md") {
+      padding: $space-md 0;
+    }
+    img {
+      position: absolute;
+      height: calc(50% + 25px);
+      top: 0;
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+      @include media-below("md") {
+        height: 50%;
+      }
+    }
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 129%;
+  }
+
+  .button-group {
+    padding: 0;
+  }
+}

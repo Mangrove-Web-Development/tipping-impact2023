@@ -19,6 +19,9 @@ h6 {
   @include media-below("lg") {
     font-size: $text-base-bump2-mob;
   }
+  @include media-below("md") {
+    font-size: $text-base-bump-mob;
+  }
 }
 
 .heading--sm { //36px H4
@@ -30,10 +33,13 @@ h6 {
 }
 
 .heading--md { //42px H3
-  font-size: $text-md;
+  font-size: $text-lg-mob;
   line-height: 1.29;
-  @include media-below("lg") {
-    font-size: $text-lg-mob;
+  @include media-above("md") {
+    font-size: $text-base-bump2;
+  }
+  @include media-above("xl") {
+    font-size: $text-md;
   }
 }
 
@@ -45,11 +51,26 @@ h6 {
   }
 }
 
+
 .heading--xl { //72px H1
-  font-size: $text-xl;
+  font-size: $text-lg-mob;
   line-height: 1.17;
-  @include media-below("lg") {
-    font-size: $text-lg-mob;
+  @include media-above("md") {
+    font-size: $text-md;
+  }
+  @include media-above("xl") {
+    font-size: $text-xl;
+  }
+}
+
+.heading--xxl { //130px H1
+  font-size: $text-xxl-mob;
+  line-height: 1.17;
+  @include media-above("md") {
+    font-size: $text-xxl;
+  }
+  @include media-above("xl") {
+    font-size: $text-xxxl;
   }
 }
 

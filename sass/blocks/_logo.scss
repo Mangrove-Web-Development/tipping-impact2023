@@ -2,14 +2,21 @@
   display: block;
   height: 56px;
   z-index: 200;
-  @include media-above("lg") {
-    height: 75px;
-  }
 
   img {
     height: 56px;
-    @include media-above("lg") {
-      height: 75px;
+  }
+
+  &.header-nav {
+    opacity: 0;
+    transition: $base-transition;
+    .mobile-nav-active & {
+      opacity: 1;
+      transition: $base-transition;
+    }
+
+    @include media-above('lg') {
+      display: none;
     }
   }
 }

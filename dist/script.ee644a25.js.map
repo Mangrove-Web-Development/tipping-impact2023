@@ -1,1 +1,0 @@
-{"version":3,"sources":["script.js"],"names":["console","log"],"mappings":";;;AAEiB,aAFjB,QAAA,qBAEAA,QAAQC,IAAI","file":"script.ee644a25.js","sourceRoot":"..","sourcesContent":["import './sass/index.scss'\n\nconsole.log('hi')"]}

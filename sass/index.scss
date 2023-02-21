@@ -24,7 +24,7 @@
 @import 'vendor/hamburgers/hamburgers';
 // @import 'sass/vendor/gravityforms/gravityforms';
 // @import 'sass/vendor/svg-support/svg';
-// @import 'sass/vendor/magnific-popup/main';
+@import 'vendor/magnific-popup/main';
 // @import 'sass/node_modules/@fancyapps/ui/src/Fancybox/Fancybox';
 // @import 'sass/node_modules/slick-carousel/slick/slick';
 
@@ -32,12 +32,12 @@
 // Blocks
 // BEM blocks, not Building Blocks.
 // --------------------------------------------------
-@import 'blocks/article';
+// @import 'blocks/article';
 @import 'blocks/button';
 @import 'blocks/footer';
 @import 'blocks/grid';
 // @import 'blocks/grid/mixins';
-// @import 'blocks/grid/index';
+@import 'blocks/popup';
 @import 'blocks/header';
 @import 'blocks/heading';
 @import 'blocks/logo';
@@ -54,6 +54,14 @@
 @import 'building-blocks/icon-row';
 @import 'building-blocks/cta';
 @import 'building-blocks/hero';
+@import 'building-blocks/col-text';
+@import 'building-blocks/text-circles';
+@import 'building-blocks/testimonials';
+@import 'building-blocks/text-item';
+@import 'building-blocks/stats';
+@import 'building-blocks/video';
+@import 'building-blocks/banner';
+@import 'building-blocks/list';
 
 //
 // Utilities

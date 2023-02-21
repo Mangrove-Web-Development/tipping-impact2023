@@ -1,11 +1,14 @@
 .header {
-  background-color: $brand-black;
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   width: 100%;
   transition: $base-transition;
+  @include media-above('lg') {
+    background-color: $brand-white;
+  }
 
   .admin-bar & {
     top: 32px;
@@ -13,14 +16,17 @@
 }
 
 .header__content {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: $header-height-mobile;
+  height: 100%;
+  min-height: $header-height-mobile;
   position: relative;
+  transition: $base-transition;
 
   @include media-above("lg") {
-    height: $header-height-desktop;
+    min-height: $header-height-desktop;
   }
 }
 
@@ -29,7 +35,22 @@
 }
 
 .headroom--not-top {
-  box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
+  background-color: transparent;
+  @include media-above("lg") {
+    background-color: $brand-black;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
+    .header__content {
+      min-height: 43px;
+      transition: $base-transition;
+    }
+    .nav--main .nav__list .menu_item a {
+      color: $brand-white;
+      &:hover,
+      &:focus {
+        color: $brand-light-green;
+      }
+    }
+  }
 }
 
 .js-header-wrapper {

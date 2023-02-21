@@ -7,8 +7,8 @@
 .wrapper {
   margin-left: auto;
   margin-right: auto;
-  padding-left: $wrapper-padding;
-  padding-right: $wrapper-padding;
+  padding-left: $wrapper-padding-mob;
+  padding-right: $wrapper-padding-mob;
 
   @include clearfix;
 
@@ -22,6 +22,8 @@
 
   @include media-above("md") {
     max-width: get-breakpoint("horizontal", "md");
+    padding-left: $wrapper-padding;
+    padding-right: $wrapper-padding;
   }
 
   @include media-above("lg") {

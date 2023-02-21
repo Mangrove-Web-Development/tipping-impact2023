@@ -16,7 +16,7 @@ html {
 
 body {
   font-family: $base-font;
-  font-size: $base-font-size;
+  font-size: $text-base-bump-mob;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
   letter-spacing: $base-letter-spacing;
@@ -26,6 +26,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  @include media-above('lg') {
+    font-size: $base-font-size; 
+  }
 }
 
 main {
