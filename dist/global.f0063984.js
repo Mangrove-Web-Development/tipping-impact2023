@@ -21854,7 +21854,30 @@ function playVideo(event) {
 function initVideoPlay() {
   $doc.on('click', '.js-video-play', playVideo);
 }
-},{"jquery":"node_modules/jquery/dist/jquery.js","magnific-popup":"node_modules/magnific-popup/dist/jquery.magnific-popup.js"}],"js/index.js":[function(require,module,exports) {
+},{"jquery":"node_modules/jquery/dist/jquery.js","magnific-popup":"node_modules/magnific-popup/dist/jquery.magnific-popup.js"}],"js/lib/scroll.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = initScroll;
+var _jquery = _interopRequireDefault(require("jquery"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function scrollToTargetElement(target, event) {
+  event.preventDefault();
+  (0, _jquery.default)('html, body').animate({
+    scrollTop: (0, _jquery.default)(target).offset().top
+  }, 1000);
+}
+function initScroll() {
+  (0, _jquery.default)('a').click(function (event) {
+    var target = (0, _jquery.default)(this).attr('href');
+    if (target.startsWith('#')) {
+      scrollToTargetElement(target, event);
+    }
+  });
+}
+},{"jquery":"node_modules/jquery/dist/jquery.js"}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _greensock = _interopRequireDefault(require("./lib/greensock"));
@@ -21862,13 +21885,15 @@ var _headroom = _interopRequireDefault(require("./lib/headroom"));
 var _mobileNav = _interopRequireDefault(require("./lib/mobile-nav"));
 var _accessibility = _interopRequireDefault(require("./lib/accessibility"));
 var _videoPopup = _interopRequireDefault(require("./lib/video-popup"));
+var _scroll = _interopRequireDefault(require("./lib/scroll"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 (0, _greensock.default)();
 (0, _headroom.default)();
 (0, _mobileNav.default)();
 (0, _accessibility.default)();
 (0, _videoPopup.default)();
-},{"./lib/greensock":"js/lib/greensock.js","./lib/headroom":"js/lib/headroom.js","./lib/mobile-nav":"js/lib/mobile-nav.js","./lib/accessibility":"js/lib/accessibility.js","./lib/video-popup":"js/lib/video-popup.js"}],"global.js":[function(require,module,exports) {
+(0, _scroll.default)();
+},{"./lib/greensock":"js/lib/greensock.js","./lib/headroom":"js/lib/headroom.js","./lib/mobile-nav":"js/lib/mobile-nav.js","./lib/accessibility":"js/lib/accessibility.js","./lib/video-popup":"js/lib/video-popup.js","./lib/scroll":"js/lib/scroll.js"}],"global.js":[function(require,module,exports) {
 "use strict";
 
 require("./sass/index.scss");

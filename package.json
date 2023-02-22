@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel --port 80 --hmr-port 3500 index.html",
-    "build": "parcel build index.html --public-url ./",
-    "test": "static-server -p 80 dist"
+    "build": "parcel build --out-dir docs index.html",
+    "test": "static-server -p 80 docs"
   },
   "devDependencies": {
     "autoprefixer": "^8.0.0",

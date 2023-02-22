@@ -88,6 +88,7 @@
       flex-flow: row nowrap;
       align-items: center;
       padding: $space-sm 0;
+      color: red;
       & > div {
         padding: 0 $space-sm;
         @include media-above("lg") {
