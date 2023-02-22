@@ -36,6 +36,7 @@
   .text-image__image {
     @include media-above("lg") {
       margin-top: 15px;
+      min-height: 605px;
     }
   }
 
