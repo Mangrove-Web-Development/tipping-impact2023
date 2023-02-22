@@ -4832,7 +4832,7 @@ h6 {
     text-align: center; }
     @media screen and (min-width: 700px) {
       .building-block--list h3 {
-        margin-bottom: calc($space/2);
+        margin-bottom: calc( 30px/2);
         text-align: left; } }
   .building-block--list .list__grid {
     display: flex;
