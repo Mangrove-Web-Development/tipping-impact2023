@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --public-url ./"
+    "start": "parcel --port 80 --hmr-port 3500 index.html",
+    "build": "parcel build index.html --public-url ./",
+    "test": "static-server -p 80 dist"
   },
   "devDependencies": {
     "autoprefixer": "^8.0.0",
@@ -20,6 +21,7 @@
     "headroom.js": "^0.12.0",
     "jquery": "^3.6.3",
     "magnific-popup": "^1.1.0",
-    "node-sass": "^8.0.0"
+    "node-sass": "^8.0.0",
+    "static-server": "^2.2.1"
   }
 }

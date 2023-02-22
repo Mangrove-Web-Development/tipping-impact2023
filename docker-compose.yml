@@ -7,4 +7,5 @@ services:
     volumes:
       - ./:/mnt/site
     ports:
-      - 80:1234
+      - 80:80
+      - 3500:3500
