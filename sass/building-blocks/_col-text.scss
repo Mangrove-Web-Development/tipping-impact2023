@@ -33,7 +33,10 @@
   }
 
   &__title {
-    margin-bottom: $space-xxs;
+    margin-bottom: $space-xs;
+    @include media-above('lg') {
+      margin-bottom: $space-sm;
+    }
   }
 
   &__item {
@@ -48,12 +51,6 @@
           padding: 0 $space-md;
         }
       }
-      // @include media-below("md") {
-      //   margin-bottom: $space;
-      //   &:last-child {
-      //     margin-bottom: 0;
-      //   }
-      // }
 
       .col-text__title {
         color: $brand-green;
@@ -64,47 +61,6 @@
           color: $brand-black;
         }
       }
-
-      .col-text--border & {
-        &:first-child {
-          .col-text__title {
-            color: $brand-green;
-          }
-        }
-        &:nth-child(2) {
-          .col-text__title {
-            color: $brand-orange;
-          }
-        }
-
-        &::before {
-          content: '';
-          border: 1px solid $brand-black;
-          border-radius: $border-radius;
-          position: absolute;
-          top: 8px;
-          bottom: 8px;
-          left: 8px;
-          right: 8px;
-        }
-
-        @include media-below("xxl") {
-          @include media-above("md") {
-            &:first-child {
-              padding-left: 64px;
-              &::before {
-                left: 32px;
-              }
-            }
-            &:last-child {
-              padding-right: 64px;
-              &::before {
-                right: 32px;
-              }
-            }
-          }
-        }
-      }
     }
 
     &.u-size-1of3--xl {
@@ -112,7 +68,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: $space-lg;
+        margin-bottom: $space-md;
       }
 
       .col-text__text {
@@ -149,6 +105,23 @@
         }
       }
 
+    }
+  }
+}
+
+#impact_report header {
+  margin-bottom: 0;
+}
+#investment_to_impact {
+  header {
+    margin-bottom: $space;
+    @include media-above('xl') {
+      margin-bottom: $space-md;
+    }
+  }
+  .u-body-copy {
+    @include media-above('md') {
+      max-width: 75%;
     }
   }
 }

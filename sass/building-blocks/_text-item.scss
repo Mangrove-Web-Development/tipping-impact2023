@@ -2,6 +2,16 @@
   margin-bottom: $space-xl;
 }
 
+.text-image {
+  padding-bottom: 250px;
+  @include media-above("lg") {
+    padding-bottom: 170px;
+  }
+  @include media-above("extra") {
+    padding-bottom: 10vw;
+  }
+}
+
 .text-image__item {
   display: flex;
   flex-direction: column;
@@ -18,7 +28,8 @@
       right: 0;
       top: 0;
       width: 50vw;
-      height: 100%;
+      height: 0;
+      padding-bottom: 41.5vw;
     }
   }
 
@@ -36,31 +47,27 @@
   .text-image__image {
     @include media-above("lg") {
       margin-top: 15px;
-      min-height: 605px;
+      // min-height: 605px;
     }
   }
 
   .text-image--alt & {
-    min-height: 605px;
+    min-height: 40vw;
     margin: 0;
-    padding-bottom: 250px;
-    @include media-above("lg") {
-      padding-bottom: 170px;
-    }
 
     .text-image__img {
       width: 100%;
       position: relative;
       @include media-above("lg") {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
         right: 0;
         left: auto;
         width: 50vw;
-        height: 100%;
+        height: auto;
         min-height: 605px;
-        object-fit: cover;
+        object-fit: contain;
+        object-position: 100% 0;
       }
     }
 
@@ -87,8 +94,10 @@
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      padding: $space-sm 0;
-      color: red;
+      padding: $space-sm 0 $space;
+      @include media-above("lg") {
+        padding: $space 0 $space-md;
+      }
       & > div {
         padding: 0 $space-sm;
         @include media-above("lg") {
@@ -103,6 +112,74 @@
         align-items: center;
         font-weight: 600;
         font-family: $second-font;
+        &.u-bg-green {
+          box-shadow: 0 0 0 0 rgba($brand-green, 1);
+          animation: pulse 2s infinite;
+          @include keyframes(pulse) {
+            0% {
+              box-shadow: 0 0 0 0 rgba($brand-green, 0.7);
+            }
+            
+            70% {
+              box-shadow: 0 0 0 30px rgba($brand-green, 0);
+            }
+            
+            100% {
+              box-shadow: 0 0 0 0 rgba($brand-green, 0);
+            }
+          }
+        }
+        &.u-bg-dark-green {
+          box-shadow: 0 0 0 0 rgba($brand-dark-green, 1);
+          animation: pulseDark 2s infinite;
+          @include keyframes(pulseDark) {
+            0% {
+              box-shadow: 0 0 0 0 rgba($brand-dark-green, 0.7);
+            }
+            
+            70% {
+              box-shadow: 0 0 0 30px rgba($brand-dark-green, 0);
+            }
+            
+            100% {
+              box-shadow: 0 0 0 0 rgba($brand-dark-green, 0);
+            }
+          }
+        }
+        &.u-bg-light-green {
+          box-shadow: 0 0 0 0 rgba($brand-light-green, 1);
+          animation: pulseLight 2s infinite;
+          @include keyframes(pulseLight) {
+            0% {
+              box-shadow: 0 0 0 0 rgba($brand-light-green, 0.7);
+            }
+            
+            70% {
+              box-shadow: 0 0 0 30px rgba($brand-light-green, 0);
+            }
+            
+            100% {
+              box-shadow: 0 0 0 0 rgba($brand-light-green, 0);
+            }
+          }
+        }
+        &.u-bg-mid-green {
+          box-shadow: 0 0 0 0 rgba($brand-mid-green, 1);
+          animation: pulseMid 2s infinite;
+          @include keyframes(pulseMid) {
+            0% {
+              box-shadow: 0 0 0 0 rgba($brand-mid-green, 0.7);
+            }
+            
+            70% {
+              box-shadow: 0 0 0 30px rgba($brand-mid-green, 0);
+            }
+            
+            100% {
+              box-shadow: 0 0 0 0 rgba($brand-mid-green, 0);
+            }
+          }
+        }
       }
       .text {
         font-family: $second-font;
@@ -122,11 +199,11 @@
       // }
     }
 
-    .wysiwyg-editor p {
-      @include media-above("md") {
-        font-size: $text-base-bump;
-      }
-    }
+    // .wysiwyg-editor p {
+    //   @include media-above("md") {
+    //     font-size: $text-base-bump;
+    //   }
+    // }
 
     .button-group {
       margin-top: $space-sm;

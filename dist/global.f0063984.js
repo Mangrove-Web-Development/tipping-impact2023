@@ -19580,64 +19580,27 @@ function setupFadeInFirstElement(elem) {
     }
   });
 }
-function setupFadeInStaggerElements() {
-  _gsap.default.utils.toArray(".js-fadeinStagger").forEach(function (elem, i) {
-    _gsap.default.set(elem, {
-      opacity: 0
-    });
-    _gsap.default.from(elem, {
-      y: 10,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: elem,
-        start: "top 100%"
-      }
-    });
-  });
-  _ScrollTrigger.default.batch(".js-fadeinStagger", {
-    onEnter: function onEnter(batch) {
-      return _gsap.default.to(batch, {
-        opacity: 1,
-        y: 0,
-        ease: "power2.inOut",
-        stagger: {
-          each: 0.15,
-          grid: [1, 3]
-        },
-        overwrite: true
-      });
-    },
-    onLeaveBack: function onLeaveBack(batch) {
-      return _gsap.default.set(batch, {
-        opacity: 0,
-        y: 10,
-        overwrite: true
-      });
-    }
-  });
-  _ScrollTrigger.default.addEventListener("refreshInit", function () {
-    return _gsap.default.set(".js-fadeinStagger", {
-      y: 0
-    });
-  }, {
-    passive: true
-  });
-}
 function hide(elem) {
   _gsap.default.set(elem, {
     autoAlpha: 0,
-    y: 0
+    y: 10
   });
 }
 function init() {
   _gsap.default.registerPlugin(_ScrollTrigger.default);
   _gsap.default.utils.toArray(".js-fadeinHero").forEach(setupFadeInFirstElement);
   _gsap.default.utils.toArray(".js-fadein").forEach(setupFadeInElement);
-  //setupFadeInStaggerElements()
 }
-
 function initGreenSock() {
   (0, _jquery.default)(document).ready(init);
+  (0, _jquery.default)(document).ready(function () {
+    (0, _jquery.default)(".text-circles__item").hover(function () {
+      (0, _jquery.default)(".text-circles__item").removeClass('is-active');
+      (0, _jquery.default)(this).addClass('is-active');
+    }, function () {
+      (0, _jquery.default)(this).removeClass('is-active');
+    });
+  });
 }
 },{"jquery":"node_modules/jquery/dist/jquery.js","gsap":"node_modules/gsap/index.js","gsap/ScrollTrigger":"node_modules/gsap/ScrollTrigger.js"}],"node_modules/headroom.js/dist/headroom.js":[function(require,module,exports) {
 var define;
@@ -20142,6 +20105,22 @@ function initMobileNav() {
       }
     }
   });
+  $doc.on('click', '.js-mobile-nav a', function (event) {
+    if ($mobileNav.hasClass('is-active')) {
+      $hamburger.attr('aria-expanded', 'false');
+      $mobileNav.toggleClass('is-active');
+      $hamburger.toggleClass('is-active');
+      $header.toggleClass('mobile-nav-active');
+    }
+  });
+  window.onscroll = function (event) {
+    if ($mobileNav.hasClass('is-active')) {
+      $hamburger.attr('aria-expanded', 'false');
+      $mobileNav.toggleClass('is-active');
+      $hamburger.toggleClass('is-active');
+      $header.toggleClass('mobile-nav-active');
+    }
+  };
 }
 },{"jquery":"node_modules/jquery/dist/jquery.js"}],"js/lib/accessibility.js":[function(require,module,exports) {
 "use strict";
@@ -21845,7 +21824,7 @@ function playVideo(event) {
         youtube: {
           index: 'youtube.com',
           id: 'v=',
-          src: '//www.youtube.com/embed/%id%?rel=0&amp;autoplay=1&mute=1'
+          src: '//www.youtube.com/embed/%id%&rel=0&amp;autoplay=1&mute=1'
         }
       }
     }

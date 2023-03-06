@@ -1,8 +1,13 @@
 .text-circles__wrap {
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: $space-md-bump 0;
+  background-position: center top;
+  background-size: auto 115%;
+  padding: $space-sm 0 $space-md-bump;
+  @include media-above('lg') {
+    background-position: center;
+    background-size: cover;
+    padding: $space 0 $space-md-bump;
+  }
 }
 .text-circles__grid {
     display: flex;
@@ -25,7 +30,7 @@
         margin: auto;
     }
     @include media-below("sm") {
-        max-width: 90%;
+        max-width: 100%;
         margin: auto;
     }
 }
@@ -65,7 +70,7 @@
         transition: $base-transition;
     }
     &--blue {
-        &:hover {
+        &.is-active {
           @include media-above("xl") {
             background-color: $brand-blue;
             border-color: $brand-blue;
@@ -78,7 +83,7 @@
         }
     }
     &--orange {
-        &:hover {
+        &.is-active {
           @include media-above("xl") {
             background-color: $brand-orange;
             border-color: $brand-orange;
@@ -91,7 +96,7 @@
         }
     }
     &--green {
-        &:hover {
+        &.is-active {
           @include media-above("xl") {
             background-color: $brand-green;
             border-color: $brand-green;
@@ -104,21 +109,6 @@
         }
     }
 
-    &--2 {
-        width: calc(50% - 120px);
-        margin: $space-xs $space-lg;
-        padding: $space-sm $space-lg;
-        @include media-below("xl") {
-            width: calc(50% - 60px);
-            margin: $space-xs $space;
-        }
-        @include media-below("md") {
-            width: 100%;
-            margin: 1.5 * $space-xs 0;
-            padding: $space-sm;
-        }
-    }
-
     &--3 {
         width: 33.33%;
         padding: $space-lg;
@@ -126,7 +116,6 @@
         @include media-below("xxl") {
           padding: $space-md;
         }
-
         @include media-below("lg") {
             width: 50%;
             padding: $space;
@@ -150,7 +139,7 @@
         }
         @include media-below("md") {
             width: 50%;
-            padding: $space-xs $space-md $space-xs 0;
+            padding: $space-xs $space-sm;
             h3.heading--xs {
               padding: 0;
               font-size: $text-base-mob;
@@ -170,7 +159,7 @@
           font-size: $text-xxl;
           font-weight: 600;
           line-height: 120%;
-          color: $brand-dark-green;
+          color: $brand-green;
         }
       }
       @include media-below("xl") {
@@ -254,6 +243,9 @@
 }
 
 .text-circles__text {
-    margin: $space-sm 0 0;
+    margin: $space-xs 0 0;
     font-size: $text-base;
+    @include media-above("lg") {
+        margin: $space-sm 0 0;
+    }
 }

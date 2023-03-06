@@ -2,14 +2,14 @@
  .wysiwyg-editor {
 
   p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
     font-size: $text-base-bump-mob;
     line-height: 1.67;
     &:last-child {
       margin-bottom: 0;
     }
     @include media-above("lg") {
-      font-size: $base-font-size;
+      font-size: $text-base;
     }
   }
 

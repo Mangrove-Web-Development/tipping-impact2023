@@ -27,7 +27,7 @@ function playVideo(event) {
         youtube: {
           index: 'youtube.com',
           id: 'v=',
-          src: '//www.youtube.com/embed/%id%?rel=0&amp;autoplay=1&mute=1'
+          src: '//www.youtube.com/embed/%id%&rel=0&amp;autoplay=1&mute=1'
         }
       }
     }

@@ -390,6 +390,7 @@
     } @else if $count == 3 {
       left: auto;
       right: -5px;
+      z-index: 1;
     }
   }
   &::after {

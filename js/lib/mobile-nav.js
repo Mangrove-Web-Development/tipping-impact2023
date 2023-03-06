@@ -38,4 +38,20 @@ export default function initMobileNav(){
       }
     }
   })
+  $doc.on('click', '.js-mobile-nav a', function(event) {
+    if ( $mobileNav.hasClass('is-active') ) {
+      $hamburger.attr('aria-expanded', 'false')
+      $mobileNav.toggleClass('is-active')
+      $hamburger.toggleClass('is-active')
+      $header.toggleClass('mobile-nav-active')
+    }
+  })
+  window.onscroll = function (event) {  
+    if ( $mobileNav.hasClass('is-active') ) {
+      $hamburger.attr('aria-expanded', 'false')
+      $mobileNav.toggleClass('is-active')
+      $hamburger.toggleClass('is-active')
+      $header.toggleClass('mobile-nav-active')
+    }
+  }
 }

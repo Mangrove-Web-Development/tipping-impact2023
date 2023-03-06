@@ -60,7 +60,7 @@
 }
 
 .hero__side {
-  width: 50%;
+  width: 55%;
   @include media-below("lg") {
     width: 100%;
   }
@@ -68,43 +68,37 @@
 
 .hero__text {
   margin: 0 0 $space-lg auto;
-
-  h1 {
-    @include media-below("xl") {
-      font-size: $text-lg;
-    }
-    @include media-below("sm") {
-      font-weight: 500;
-      font-size: $text-lg-mob;
-      line-height: 125%;
-    }
-  }
+  @include media-above("lg") {
+    margin: 0 -10% $space-lg auto;
+  } 
 }
 
 .hero__title {
-  position: relative;
-  display: table-cell;
+  span {
+    position: relative;
+    display: inline-block;
 
-  &:after {
-    content: "";
-    width: 40px;
-    height: 40px;
-    margin: 0 0 -50px -30px;
-    border-radius: 50%;
-    position: absolute;
-    z-index: -1;
-    background-color: $brand-orange;
+    &:after {
+      content: "";
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: -1;
+      background-color: $brand-orange;
 
-    @include media-above("xl") {
-      width: 120px;
-      height: 120px;
-      margin: 0 0 -50px -80px;
-    }
+      @include media-above("sm") {
+        width: 90px;
+        height: 90px;
+      }
 
-    @include media-above("sm") {
-      width: 90px;
-      height: 90px;
-      margin: 0 0 -50px -60px;
+      @include media-above("xl") {
+        width: 120px;
+        height: 120px;
+      }
     }
   }
 }

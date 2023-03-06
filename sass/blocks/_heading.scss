@@ -33,10 +33,10 @@ h6 {
 }
 
 .heading--md { //42px H3
-  font-size: $text-lg-mob;
+  font-size: $text-base-bump2;
   line-height: 1.29;
   @include media-above("md") {
-    font-size: $text-base-bump2;
+    font-size: $text-sm;
   }
   @include media-above("xl") {
     font-size: $text-md;
@@ -44,19 +44,22 @@ h6 {
 }
 
 .heading--lg { //54px H2
-  font-size: $text-lg;
+  font-size: $text-sm;
   line-height: 1.29;
-  @include media-below("lg") {
-    font-size: $text-lg-mob;
+  @include media-above("md") {
+    font-size: $text-md;
+  }
+  @include media-above("xl") {
+    font-size: $text-lg;
   }
 }
 
 
 .heading--xl { //72px H1
-  font-size: $text-lg-mob;
+  font-size: $text-md;
   line-height: 1.17;
   @include media-above("md") {
-    font-size: $text-md;
+    font-size: $text-lg;
   }
   @include media-above("xl") {
     font-size: $text-xl;
@@ -80,5 +83,14 @@ h6 {
   font-size: $text-base;
   @include media-below("lg") {
     font-size: $text-base-mob;
+  }
+}
+
+.heading-text {
+  .wysiwyg-editor p {
+    font-size: $text-base;
+    @include media-above('lg') {
+      font-size: $text-base-bump;
+    }
   }
 }

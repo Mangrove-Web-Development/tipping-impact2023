@@ -48,11 +48,14 @@
   padding-top: $space-xxl;
   pointer-events: none;
   transform: translateX(100%);
-  transition: $base-transition;
+  // transition: $base-transition;
+  // display: none;
 
   &.is-active {
+    // display: block;
     transform: translateX(0);
     pointer-events: all;
+    transition: $base-transition;
   }
 
   @include media-above("sm") {

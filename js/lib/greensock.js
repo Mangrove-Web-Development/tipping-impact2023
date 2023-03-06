@@ -50,36 +50,29 @@ function setupFadeInFirstElement(elem) {
     onEnter: function() { animateSimple(elem) }
   })
 }
-function setupFadeInStaggerElements() {
-  gsap.utils.toArray(".js-fadeinStagger").forEach((elem, i) => {
-    gsap.set(elem, {opacity:0})
-    gsap.from(elem, {
-      y: 10,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: elem,
-        start: "top 100%"
-      }
-    });
-  });
-  ScrollTrigger.batch(".js-fadeinStagger", {
-    onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, ease: "power2.inOut",stagger: {each: 0.15, grid: [1, 3]}, overwrite: true}),
-    onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 10, overwrite: true})
-  });
-  ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".js-fadeinStagger", {y: 0}),{passive:true});
-}
+
 
 function hide(elem) {
-  gsap.set(elem, {autoAlpha: 0, y: 0})
+  gsap.set(elem, {autoAlpha: 0, y: 10})
 }
 
 function init(){
   gsap.registerPlugin(ScrollTrigger)
   gsap.utils.toArray(".js-fadeinHero").forEach( setupFadeInFirstElement )
   gsap.utils.toArray(".js-fadein").forEach( setupFadeInElement )
-  //setupFadeInStaggerElements()
 }
 
 export default function initGreenSock(){
   $(document).ready( init )
+  $(document).ready(function() {
+    $(".text-circles__item").hover(
+      function() {
+        $(".text-circles__item").removeClass('is-active')
+        $(this).addClass('is-active')
+      },
+      function() {
+        $(this).removeClass('is-active')
+      }
+    );
+  })
 }
